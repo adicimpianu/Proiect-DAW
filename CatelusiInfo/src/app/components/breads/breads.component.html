@@ -1,0 +1,20 @@
+<div class="breads">
+  <div class="breads__list-container">
+    <buttons-list
+      [items]="breadsList"
+      (clickedItem)="handleClickedBread($event)"
+    ></buttons-list>
+  </div>
+  <div class="breads__list-container">
+    <div
+      class="subbreads-wrapper"
+      [ngClass]="{ 'subbreads-wrapper--active': subBreads }"
+    >
+      <buttons-list
+        *ngIf="subBreads"
+        [items]="subBreadsList"
+        (clickedItem)="handleClickedSubBread($event)"
+      ></buttons-list>
+    </div>
+  </div>
+</div>
